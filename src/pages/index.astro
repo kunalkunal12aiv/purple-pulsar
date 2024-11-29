@@ -1,0 +1,38 @@
+---
+import ProductCard from '../components/product/ProductCard.svelte';
+
+const products = [
+    {
+        title: 'Designer Denim Jacket',
+        price: 89.99,
+        imageUrl: 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d',
+        sizes: ['XS', 'S', 'M', 'L', 'XL']
+    },
+    {
+        title: 'Classic White Sneakers',
+        price: 59.99,
+        imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff',
+        sizes: ['38', '39', '40', '41', '42']
+    }
+];
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Fashion Store</title>
+    </head>
+    <body class="bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to Our Fashion Store</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    products.map((product) => (
+                        <ProductCard client:load title={product.title} price={product.price} imageUrl={product.imageUrl} sizes={product.sizes} />
+                    ))
+                }
+            </div>
+        </div>
+    </body>
+</html>
