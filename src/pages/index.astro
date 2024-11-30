@@ -1,38 +1,45 @@
 ---
-import ProductCard from '../components/product/ProductCard.svelte';
-
-const products = [
-    {
-        title: 'Designer Denim Jacket',
-        price: 89.99,
-        imageUrl: 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d',
-        sizes: ['XS', 'S', 'M', 'L', 'XL']
-    },
-    {
-        title: 'Classic White Sneakers',
-        price: 59.99,
-        imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff',
-        sizes: ['38', '39', '40', '41', '42']
-    }
-];
+// Import Layout, components, and the newly created components
+import Layout from '../layouts/Layout.astro';
+import InteractiveHome from '../components/Interactive.svelte';  // Import the Interactive Home component
+import Header from '../components/header.svelte';  // Import the Header component
+import CardComponent from '../components/cardcomponent.svelte';  // Import the CardComponent
+import WardrobeAnalytics from '../components/home.wardrobeanalytics.svelte';  // Import WardrobeAnalytics component
+import SmartRecommendations from '../components/home.smartrecommendation.svelte';  // Import SmartRecommendations component
+import OutfitPlanning from '../components/home.outfilplanning.svelte';  // Import OutfitPlanning component
+import Footer from '../components/footer.svelte';  // Import the Footer component
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Fashion Store</title>
-    </head>
-    <body class="bg-gray-50">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to Our Fashion Store</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {
-                    products.map((product) => (
-                        <ProductCard client:load title={product.title} price={product.price} imageUrl={product.imageUrl} sizes={product.sizes} />
-                    ))
-                }
-            </div>
-        </div>
-    </body>
-</html>
+<Layout title="Purple Pulsar">
+  <!-- Include the Header component -->
+  <Header />
+  
+  <!-- Interactive Home Component -->
+  <InteractiveHome />
+
+  <!-- Card Component Section -->
+  <div class="mt-8">
+    <h2 class="text-2xl font-semibold text-center mb-4">Explore Our Services</h2>
+    <CardComponent />
+  </div>
+</Layout>
+
+  
+  <!-- Smart Recommendations Section -->
+  <div class="mt-8">
+    <SmartRecommendations />
+  </div>
+
+  <!-- Outfit Planning Section -->
+  <div class="mt-8">
+    <OutfitPlanning />
+  </div>
+  
+  <!-- Wardrobe Analytics Section -->
+  <div class="mt-8">
+    <WardrobeAnalytics />
+  </div>
+
+   <!-- Include the Footer component -->
+   <Footer />
+</Layout>

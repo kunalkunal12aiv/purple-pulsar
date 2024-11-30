@@ -1,0 +1,24 @@
+---
+import Header from '../components/header.svelte';
+import Footer from '../components/footer.svelte';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><slot name="title" /></title>
+  </head>
+  <body>
+    <!-- Global Header -->
+    <Header />
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'; // Import your layout
+import AboutUs from '../components/aboutus.svelte'; // Import the About Us Svelte component
+---
+
+<Layout title="About Us">
+  <main class="about-page">
+    <!-- About Us Svelte Component -->
+    <AboutUs title="About Us" description="Welcome to Purple Pulsar! Your ultimate destination for blending technology and fashion to elevate your personal style. We strive to make fashion intelligent and accessible for everyone." 
+      team={[
+        { name: "John Doe", role: "Founder & CEO", image: "https://via.placeholder.com/150" },
+        { name: "Jane Smith", role: "Chief Designer", image: "https://via.placeholder.com/150" },
+        { name: "Alex Johnson", role: "Lead Developer", image: "https://via.placeholder.com/150" }
+      ]}
+    />
+  </main>
+</Layout>
